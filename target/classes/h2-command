@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS tasks (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(255) NOT NULL,
+    data_criacao DATE NOT NULL,
+    status BOOLEAN NOT NULL
+);
+
+
+INSERT INTO tasks (descricao, data_criacao, status)
+VALUES
+  ('Tarefa 1', '2024-01-18', true),
+  ('Tarefa 2', '2024-01-19', false),
+  ('Tarefa 3', '2024-01-20', true);
+
+
+
+select * from tasks

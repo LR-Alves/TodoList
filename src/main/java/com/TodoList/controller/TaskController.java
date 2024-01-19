@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/task")
+@RequestMapping("/stask")
 public class TaskController {
 
     private final TaskService taskService;
@@ -21,6 +21,15 @@ public class TaskController {
         this.taskService = taskService;
     }
 
+    @RequestMapping("/1")
+    public String status() {
+        return "esta de pé";
+    }
+
+    //    public ResponseEntity<TaskService> Status() {
+//     String status = "servico esta disponivel" ;
+//        return new ResponseEntity(status , HttpStatus.OK);
+//    }
     @GetMapping
     public ResponseEntity<List<Task>> getAllTask() {
         List<Task> tasks = taskService.getAllTask();

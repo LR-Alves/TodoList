@@ -1,6 +1,7 @@
 package com.TodoList.model;
 
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -14,9 +15,12 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
+@Entity
+@Table(name = "tasks")
 public class Task {
 
-
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
  private Long id;
  private String descicao;
  private LocalDate dataCriacao ;
