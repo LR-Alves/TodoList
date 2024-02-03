@@ -1,6 +1,5 @@
-/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/TodoList/controller/TaskController.java
-/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/TodoList/TodoListApplication.java
-/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/TodoList/service/TaskService.java
-/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/TodoList/controller/ErrorController.java
-/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/TodoList/model/Task.java
-/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/TodoList/repository/TaskRepository.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/service/TaskService.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/model/Task.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/resource/TaskController.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/repository/TaskRepository.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/TodoListApplication.java

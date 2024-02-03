@@ -1,6 +1,5 @@
-com/TodoList/service/TaskService.class
-com/TodoList/model/Task.class
-com/TodoList/controller/ErrorController.class
-com/TodoList/TodoListApplication.class
-com/TodoList/repository/TaskRepository.class
-com/TodoList/controller/TaskController.class
+com/br/todolist/service/TaskService.class
+com/br/todolist/resource/TaskController.class
+com/br/todolist/TodoListApplication.class
+com/br/todolist/model/Task.class
+com/br/todolist/repository/TaskRepository.class
