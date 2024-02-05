@@ -1,4 +1,5 @@
 com/br/todolist/service/TaskService.class
+com/br/todolist/exceptions/TaskNotFoundException.class
 com/br/todolist/resource/TaskController.class
 com/br/todolist/TodoListApplication.class
 com/br/todolist/model/Task.class

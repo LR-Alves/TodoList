@@ -37,21 +37,19 @@ public class TaskController {
         return taskService.getTaskByid(id).map(task -> new ResponseEntity<>(task, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping
+    @PostMapping("/{add}")
     public ResponseEntity<Task> addTask(@RequestBody Task task) {
         taskService.addtask(task);
         return new ResponseEntity<>(task, HttpStatus.CREATED);
     }
 
-    @PutMapping
-    public ResponseEntity<Task> updateTask(@PathVariable Long id, Task updateTask) {
-        updateTask.setId(id);
-        taskService.updateTask(updateTask);
-        return new ResponseEntity<>(updateTask, HttpStatus.OK);
-
+    @PutMapping("/{id}")
+    public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task updatedTask) {
+        taskService.updateTask(id, updatedTask);
+        return new ResponseEntity<>(updatedTask, HttpStatus.OK);
     }
-
-    @DeleteMapping("/{id}")
+    @
+            DeleteMapping("/{id}")
     public ResponseEntity<Task> DeleteTask(@PathVariable Long id) {
         taskService.deletTask(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
