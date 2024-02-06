@@ -20,18 +20,12 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @Tag(name = "TodoList")
 public class TaskController {
 
-    private final TaskService taskService;
 
+    private final TaskService taskService;
     @Autowired
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
     }
-
-    @GetMapping("/status")
-    public String status() {
-        return "esta de pé";
-    }
-
 
 
     @Operation(summary = "realizar a listagem de todas as tarefas", method = "GET")
@@ -53,7 +47,7 @@ public class TaskController {
     }
 
 
-    @Operation(summary = "realizar a listagem de todas as tarefas", method = "GET")
+    @Operation(summary = "Criar nova tarefa", method = "POST")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "listagem feira com sucesso"),
             @ApiResponse(responseCode = "422" , description = "dados de requisicao invalidos"),
