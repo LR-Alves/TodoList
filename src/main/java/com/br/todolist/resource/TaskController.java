@@ -3,15 +3,21 @@ package com.br.todolist.resource;
 
 import com.br.todolist.model.Task;
 import com.br.todolist.service.TaskService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+
 @RestController
-@RequestMapping("/task")
+@RequestMapping(value = "/task" , produces = {"application/json"})
+@Tag(name = "TodoList")
 public class TaskController {
 
     private final TaskService taskService;
@@ -26,6 +32,15 @@ public class TaskController {
         return "esta de pé";
     }
 
+
+
+    @Operation(summary = "realizar a listagem de todas as tarefas", method = "GET")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "listagem feira com sucesso"),
+            @ApiResponse(responseCode = "422" , description = "dados de requisicao invalidos"),
+            @ApiResponse(responseCode = "400", description = "parametros invalidos"),
+            @ApiResponse(responseCode = "500" , description = "Erro ao realizar a busca das tarefas"),
+    })
     @GetMapping
     public ResponseEntity<List<Task>> getAllTask() {
         List<Task> tasks = taskService.getAllTask();
@@ -37,7 +52,15 @@ public class TaskController {
         return taskService.getTaskByid(id).map(task -> new ResponseEntity<>(task, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping("/{add}")
+
+    @Operation(summary = "realizar a listagem de todas as tarefas", method = "GET")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "listagem feira com sucesso"),
+            @ApiResponse(responseCode = "422" , description = "dados de requisicao invalidos"),
+            @ApiResponse(responseCode = "400", description = "parametros invalidos"),
+            @ApiResponse(responseCode = "500" , description = "Erro ao realizar a busca das tarefas"),
+    })
+    @PostMapping(value = "/{id}" , consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity<Task> addTask(@RequestBody Task task) {
         taskService.addtask(task);
         return new ResponseEntity<>(task, HttpStatus.CREATED);
@@ -48,8 +71,7 @@ public class TaskController {
         taskService.updateTask(id, updatedTask);
         return new ResponseEntity<>(updatedTask, HttpStatus.OK);
     }
-    @
-            DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Task> DeleteTask(@PathVariable Long id) {
         taskService.deletTask(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
