@@ -1,0 +1,8 @@
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/custom/HealthIndicatorCustom.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/resource/HealthController.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/service/TaskService.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/exceptions/TaskNotFoundException.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/model/Task.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/resource/TaskController.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/repository/TaskRepository.java
+/home/digo/Documentos/Projetos Java/git/TodoList/src/main/java/com/br/todolist/TodoListApplication.java

@@ -1,0 +1,8 @@
+com/br/todolist/resource/HealthController.class
+com/br/todolist/service/TaskService.class
+com/br/todolist/exceptions/TaskNotFoundException.class
+com/br/todolist/custom/HealthIndicatorCustom.class
+com/br/todolist/resource/TaskController.class
+com/br/todolist/TodoListApplication.class
+com/br/todolist/model/Task.class
+com/br/todolist/repository/TaskRepository.class

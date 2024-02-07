@@ -11,7 +11,7 @@ public class HealthIndicatorCustom implements HealthIndicator {
 
     @Override
     public Health health() {
-        // Implementa a lógica para verificar a saúde do seu aplicativo
+
         boolean isHealthy = checkHealth();
 
         if (isHealthy) {
@@ -22,9 +22,7 @@ public class HealthIndicatorCustom implements HealthIndicator {
     }
 
     private boolean checkHealth() {
-        // Aqui você pode adicionar a lógica para verificar a saúde do seu aplicativo
-        // Por exemplo, verificando a conexão com um banco de dados, serviço externo, etc.
-        // Por simplicidade, retornaremos sempre true neste exemplo
+
         return true;
     }
 }
