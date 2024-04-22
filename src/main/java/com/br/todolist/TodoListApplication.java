@@ -5,11 +5,11 @@ import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@OpenAPIDefinition(info = @Info(title = "Todo-List" , version = "0.1", description = "API TodoList"))
+@OpenAPIDefinition(info = @Info(title = "Todo-List", version = "0.1", description = "API TodoList"))
 @SpringBootApplication
 public class TodoListApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TodoListApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TodoListApplication.class, args);
+    }
 }

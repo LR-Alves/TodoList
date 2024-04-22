@@ -17,9 +17,8 @@ import java.util.Optional;
 
 @Service
 public class TaskService {
-    private final TaskRepository taskRepository;
-
     private static final Logger logger = LoggerFactory.getLogger(TaskService.class);
+    private final TaskRepository taskRepository;
 
     @Autowired
     public TaskService(TaskRepository taskRepository) {
@@ -28,24 +27,25 @@ public class TaskService {
 
     @Transactional
     public void addtask(Task task) {
+        logger.info("Criando uma taks", task);
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-//            String taskJson = objectMapper.writeValueAsString(task);
-//            logger.info("tarefa criada: /n", taskJson);
             taskRepository.save(task);
 
         } catch (Exception e) {
-            logger.error("log4j aqui: -- >", task);
+
             throw new RuntimeException("Erro ao adicionar a tarefa", e);
         }
 
     }
 
     public List<Task> getAllTask() {
+        logger.info("Listando todas as taks");
         return taskRepository.findAll();
     }
 
     public Optional<Task> getTaskByid(Long id) {
+        logger.info("Buscando uma taks por ID -->   ", id);
         return taskRepository.findById(id);
 
     }
@@ -54,7 +54,8 @@ public class TaskService {
         taskRepository.save(saveTask);
     }
 
-public void updateTask(Long id, Task updateTask) {
+    public void updateTask(Long id, Task updateTask) {
+        logger.info("Atualizando taks");
         try {
             Task existingTask = taskRepository.getById(id);
 
@@ -72,8 +73,8 @@ public void updateTask(Long id, Task updateTask) {
     }
 
 
-
     public void deletTask(Long id) {
+        logger.info("Deletando taks");
         taskRepository.deleteById(id);
         ;
     }

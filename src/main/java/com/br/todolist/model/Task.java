@@ -12,13 +12,12 @@ import java.time.LocalDate;
 @Table(name = "tasks")
 public class Task {
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
- private Long id;
- private String descricao;
- private LocalDate dataCriacao ;
- private boolean status ;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String descricao;
+    private LocalDate dataCriacao;
+    private boolean status;
 
 
 }
